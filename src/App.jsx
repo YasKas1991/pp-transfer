@@ -1,7 +1,12 @@
+import PayPal from "components/PayPal/Paypal";
 import "./App.css";
 
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <div>
+      <PayPal />
+    </div>
+  );
 }
 
 export default App;
