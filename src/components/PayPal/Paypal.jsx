@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PayPal() {
+export default function PayPal() {
   const [money, setMoney] = useState(100);
   const [update, setUpdate] = useState("");
   const [test, setTest] = useState(0);
