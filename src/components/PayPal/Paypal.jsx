@@ -3,20 +3,24 @@ import { useState } from "react";
 export default function PayPal() {
   const [money, setMoney] = useState(100);
   const [update, setUpdate] = useState("");
-  const [test, setTest] = useState(0);
+  const [getValue, setGetValue] = useState(0);
 
   const addMoney = () => {
-    setMoney(money + setTest);
-    setUpdate(`You have added ${changeMoney}`);
+    setMoney(money + getValue);
+    setUpdate(`You have added ${getValue}`);
   };
 
   const subMoney = () => {
-    setMoney(money - setTest);
-    setUpdate(`You have withdrawn ${changeMoney}`);
+    if (!(money < getValue)) {
+      setMoney(money - getValue);
+      setUpdate(`You have withdrawn ${getValue}`);
+    } else {
+      setUpdate(`Transaction failed. You can only send £${money}`);
+    }
   };
 
   const changeMoney = (event) => {
-    setTest(event.target.valueAsNumber);
+    setGetValue(event.target.valueAsNumber);
   };
 
   return (
